@@ -45,21 +45,7 @@
                                 </div>
                         </li>
                     </ul>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown">
-                                    <a id="dropdown01" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Bandas <span class="caret"></span>
-                                    </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/bandas">
-                                            Lista
-                                    </a>
-                                    <a class="dropdown-item" href="/bandas/create">
-                                            Adicionar
-                                    </a>
-                                </div>
-                        </li>
-                    </ul>
+
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown">
                                     <a id="dropdown01" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -130,6 +116,15 @@
 
             <div class="card">
                 <div class="card-body">
+
+                @if($errors->any())
+                        <div class="alert alert-danger" role="alert">
+                            @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                            @endforeach
+                        </div>
+                @endif
+
                     @yield('conteudopagina')
                 </div>
             </div>

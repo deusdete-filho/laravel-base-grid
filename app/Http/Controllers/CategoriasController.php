@@ -59,6 +59,10 @@ class CategoriasController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name'=> 'required|max:255'
+        ]);
+
         Categorias::create($request->all());
         return redirect('/categorias');
     }
@@ -69,7 +73,10 @@ class CategoriasController extends Controller
         return view('categorias.edit', ['dado' => $edit]);
 
     }
-
+    public function show(Categorias $categorias)
+    {
+        return view('/categorias');
+    }
     public function update(Request $request, $id)
     {
         $update = Categorias::findOrFail($id);

@@ -5,7 +5,9 @@
     @endsection
 
     @section('conteudopagina')
-      <form method="POST" action="store">
+    
+
+      <form method="POST" action="{{route('categorias.store')}}">
                     @csrf
             <div class="form-row">
             <div class="form-group col-md-3">
