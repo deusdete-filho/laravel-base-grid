@@ -4,8 +4,9 @@
     Editar categoria
     @endsection
     @section('conteudopagina')
-    <form action="/categorias/{{ $dado->id }}" method="post">
+    <form action="{{ route('categorias.update',['dado' => $dado->id]) }}" method="post">
         {{ csrf_field() }}
+        {{method_field('PUT')}}
           <div class="form-row">
               <div class="form-group col-md-3">
                 <label>Nome da categoria</label>

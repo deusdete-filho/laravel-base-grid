@@ -59,12 +59,10 @@ class CategoriasController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name'=> 'required|max:255'
-        ]);
-
-        Categorias::create($request->all());
-        return redirect('/categorias');
+        $data = $this->_validate($request);
+        $data = $request->all();
+        Categorias::create($data);
+        return redirect()->route('categorias.index');
     }
 
     public function edit($id)
@@ -78,10 +76,14 @@ class CategoriasController extends Controller
         return view('/categorias');
     }
     public function update(Request $request, $id)
-    {
+    {   
         $update = Categorias::findOrFail($id);
-        $update->update($request->all());
-        return redirect('/categorias');
+        $this->_validate($request);
+        $data = $request->all();
+        $update -> fill($data);
+        $update ->save();
+        return redirect()->route('categorias.index');
+
     }
 
     public function destroy($id)
@@ -89,5 +91,13 @@ class CategoriasController extends Controller
         $destroy = Categorias::findOrFail($id);
         $destroy->delete();
         return redirect('/categorias');
+    }
+    protected function _validate(Request $request)
+    {
+        $this->validate($request, [
+            'name'=> 'required|max:255'
+
+        ]);
+
     }
 }

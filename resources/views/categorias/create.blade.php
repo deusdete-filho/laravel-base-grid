@@ -6,7 +6,6 @@
 
     @section('conteudopagina')
     
-
       <form method="POST" action="{{route('categorias.store')}}">
                     @csrf
             <div class="form-row">
