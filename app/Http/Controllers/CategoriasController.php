@@ -54,7 +54,7 @@ class CategoriasController extends Controller
 
     public function create()
     {
-        return view('categorias/create');
+        return view('categorias/create',['dado' => new Categorias()]);
     }
 
     public function store(Request $request)

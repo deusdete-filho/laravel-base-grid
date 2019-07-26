@@ -7,16 +7,7 @@
     @section('conteudopagina')
     
       <form method="POST" action="{{route('categorias.store')}}">
-                    @csrf
-            <div class="form-row">
-            <div class="form-group col-md-3">
-                  <label>Nome</label>
-                  <input type="text" name="name" class="form-control" id="name" aria-describedby="name" placeholder="Digite" required>
-            </div>
-            <div class="form-group col-md-10">
-                  <button type="submit" class="btn btn-primary">Adicionar</button>
-            </div> 
-            </div>               
+      @include('categorias._form')              
       </form>
     @endsection
 
