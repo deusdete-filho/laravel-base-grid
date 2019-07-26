@@ -44,7 +44,9 @@ class CategoriasController extends Controller
                 ]
             ])
             ->addEditAction('categorias.edit')
-            ->addDeleteAction('categorias.destroy')
+            ->addDeleteAction('categorias.destroy')            
+            // ->addShowAction('categorias.show')
+
             ->paginate(10)
             ->search();
         return view('categorias.index',[
@@ -72,7 +74,7 @@ class CategoriasController extends Controller
     }
     public function show(Categorias $categoria)
     {
-        return redirect()->route('categorias.index');
+        return redirect()->route('categorias.show', compact('categoria'));
     }
     public function update(Request $request, Categorias $categoria)
     {   

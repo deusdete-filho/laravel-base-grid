@@ -75,6 +75,11 @@ class Table
         $this->addAction('Editar', $route, !$template ? 'table.edit_action' : $template);
         return $this;
     }
+    public function addShowAction($route, $template = null)
+    {
+        $this->addShowAction('Ver', $route, !$template ? 'table.show_action' : $template);
+        return $this;
+    }
 
     public function addDeleteAction($route, $template = null)
     {
