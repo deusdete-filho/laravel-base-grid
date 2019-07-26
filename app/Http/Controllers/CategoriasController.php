@@ -54,7 +54,7 @@ class CategoriasController extends Controller
 
     public function create()
     {
-        return view('categorias/create',['dado' => new Categorias()]);
+        return view('categorias/create',['categoria' => new Categorias()]);
     }
 
     public function store(Request $request)
@@ -65,23 +65,21 @@ class CategoriasController extends Controller
         return redirect()->route('categorias.index');
     }
 
-    public function edit($id)
+    public function edit(Categorias $categoria)
     {
-        $edit = Categorias::findOrFail($id);
-        return view('categorias.edit', ['dado' => $edit]);
+        return view('categorias.edit', compact('categoria'));
 
     }
-    public function show(Categorias $categorias)
+    public function show(Categorias $categoria)
     {
-        return view('/categorias');
+        return redirect()->route('categorias.index');
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, Categorias $categoria)
     {   
-        $update = Categorias::findOrFail($id);
         $this->_validate($request);
         $data = $request->all();
-        $update -> fill($data);
-        $update ->save();
+        $categoria -> fill($data);
+        $categoria ->save();
         return redirect()->route('categorias.index');
 
     }
@@ -90,7 +88,7 @@ class CategoriasController extends Controller
     {
         $destroy = Categorias::findOrFail($id);
         $destroy->delete();
-        return redirect('/categorias');
+        return redirect()->route('categorias.index');
     }
     protected function _validate(Request $request)
     {
