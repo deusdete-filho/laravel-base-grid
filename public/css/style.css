@@ -1,0 +1,18 @@
+body {
+background: #eff1f4ff;
+}
+#style-navbar{
+    padding: 13px;
+    background-color: #fff;
+    box-shadow: 5px 2px 6px rgba(164, 164, 164, 0.2)
+
+}
+#style-card{
+    box-shadow: 1px 2px 6px rgba(164, 164, 164, 0.2);
+    border-color: #fff;
+}
+#navbar-site-title{
+    font-size: 19px;
+    padding-left: 1.2%;
+    padding-right: 1.5%;
+}

@@ -1,16 +1,16 @@
 @if(count($table->rows()))
 <div class="row">
         <div class="col-sm-2">
-        <a href="{{url()->current()}}/create" class="btn btn-sm btn-outline-dark">+ Adicionar</a>
+        <a href="{{url()->current()}}/create" class="btn  btn-dark">Adicionar</a>
         </div>
             <div class="col-sm-7"></div>
 
         <div class="col-sm-3">
         <form action="{{url()->current()}}" method="GET" class="form-inline">
-            <div class="input-group mb-3">
-                <input type="text" name="search" class="form-control btn-sm" placeholder="Digite" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group mb-3 ml-auto">
+                <input type="text" name="search" class="form-control" placeholder="Digite" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
-                <button class="btn btn-outline-secondary btn-sm" type="submit" id="button-addon2">Pesquisar</button>
+                <button class="btn btn-outline-dark" type="submit" id="button-addon2">Pesquisar</button>
                 </div>
                 </div>
         </form>
