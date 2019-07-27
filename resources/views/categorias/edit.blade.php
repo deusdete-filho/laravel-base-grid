@@ -4,6 +4,8 @@
     Editar categoria
     @endsection
     @section('conteudopagina')
+    @include('layouts._card')
+
     <form action="{{ route('categorias.update',['categoria' => $categoria->id]) }}" method="post">
 
         {{method_field('PUT')}}

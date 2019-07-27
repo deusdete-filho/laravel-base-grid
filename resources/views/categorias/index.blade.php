@@ -5,6 +5,7 @@
   @endsection
 
     @section('conteudopagina')
+    @include('layouts._card')
    
     @include('table.table')
 

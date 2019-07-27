@@ -5,15 +5,28 @@
     @endsection
 
     @section('conteudopagina')
+    <div class="row">
+        <div class="col-sm-4">
+        <div class="card" id="style-card">
+                <div class="card-body">
+        </div>
+        </div>
+</div>
+<div class="col-sm-4">
+<div class="card" id="style-card">
+                <div class="card-body">
+        </div>
+        </div>
 
-    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-                    Bem vindo, {{ Auth::user()->name }}
+</div>
+<div class="col-sm-4">
 
-    @endsection
+<div class="card" id="style-card">
+                <div class="card-body">
+        </div>
+        </div>
+</div>
+</div>
 
 @endsection
