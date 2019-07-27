@@ -1,7 +1,6 @@
 @if(count($table->rows()))
 <div class="row">
         <div class="col-sm-2">
-        <a href="{{url()->current()}}/create" class="btn  btn-dark">Adicionar</a>
         </div>
             <div class="col-sm-7"></div>
 
@@ -18,10 +17,10 @@
 
 
     <table class="table table" id="table-search">
-        <thead class="thead">
-        <tr>
+        <thead class="thead alinhadoEsquerda">
+        <tr class="alinhadoEsquerda">
             @foreach($table->columns() as $column)
-                <th data-name="{{$column['name']}}">
+                <th data-name="{{$column['name']}}" >
                     {{$column['label']}}
                     @if(isset($column['_order']))
                         @php
@@ -38,7 +37,7 @@
                 </th>
             @endforeach
             @if(count($table->actions()))
-                <th>Ações</th>
+                <th class="alinhadoDireita">Ações</th>
             @endif
         </tr>
         </thead>
@@ -49,7 +48,7 @@
                     <td>{{ $row->{$column['name']} }}</td>
                 @endforeach
                 @if(count($table->actions()))
-                    <td>
+                    <td class="alinhadoDireita">
                         @foreach($table->actions() as $action)
                             @include($action['template'],[
                                 'row' => $row,
@@ -63,15 +62,15 @@
         @endforeach
         </tbody>
     </table>
-</div>
-<br>
-<div class=" pagination justify-content-center">  
+</div></div>
+@include('layouts._form_footer')
+
+<div class=" pagination justify-content-center " id="style-paginacao">  
     {!! $table->rows()->appends(['search' => \Request::get('search'),'field_order' => \Request::get('field_order'),'order' =>\Request::get('order')])->links() !!}
-</div>
+    </div></div>
 @else
 <div class="row">
         <div class="col-sm-2">
-        <a href="{{url()->current()}}/create" class="btn btn-sm btn-outline-dark">+ Adicionar</a>
         </div>
             <div class="col-sm-7"></div>
 

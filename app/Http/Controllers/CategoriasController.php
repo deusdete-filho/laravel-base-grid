@@ -31,7 +31,12 @@ class CategoriasController extends Controller
                     'label' => 'Nome',
                     'name' => 'name',
                     'order' => true //true, asc ou desc
-                ]
+                ],
+                [
+    'label' => 'Data criação',
+    'name' => 'created_at',
+    'order' => true //true, asc ou desc
+]
             ])
             ->filters([
                 [
@@ -47,7 +52,7 @@ class CategoriasController extends Controller
             ->addDeleteAction('categorias.destroy')            
             // ->addShowAction('categorias.show')
 
-            ->paginate(10)
+            ->paginate(20)
             ->search();
         return view('categorias.index',[
             'table' => $this->table

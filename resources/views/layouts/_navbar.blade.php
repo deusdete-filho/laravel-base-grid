@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light" id="style-navbar"> 
+<nav class="navbar navbar-expand-lg navbar-dark" id="style-navbar"> 
     <a class="navbar-brand" id="navbar-site-title" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse titulomenu" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
 
                     @guest
@@ -23,21 +23,13 @@
                         @else
                         <ul class="navbar-nav">
                     <!-- links Navbar -->
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown ">
                             <a id="dropdown01" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/categorias">Lista</a>
                                     <a class="dropdown-item" href="/categorias/create">Adicionar</a>
                                 </div>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a id="dropdown01" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/categorias">Lista</a>
-                                    <a class="dropdown-item" href="/categorias/create">Adicionar</a>
-                                </div>
-                        </li>
-
                         </ul>
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item dropdown">

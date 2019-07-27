@@ -6,7 +6,7 @@
      <div class="content-center">
         @yield('content')    
         <div class="col-sm-12">
-            <h5><b>@yield('titulopagina')</h5></b>
+            <h4 class="titulopagina">@yield('titulopagina')</h4>
 
             <div class="card" id="style-card">
                 <div class="card-body">
@@ -20,7 +20,7 @@
                 @endif
 
                     @yield('conteudopagina')
-                </div>
+
             </div>
         </div>
 </main>

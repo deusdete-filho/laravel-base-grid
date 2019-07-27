@@ -8,7 +8,10 @@
 
     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
+                        <div class="row">
+                        <div class="col-md-3"></div>
+                        
+                        <div class="col-md-5">
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail') }}</label>
 
@@ -48,10 +51,15 @@
                                 </div>
                             </div>
                         </div>
+                        </div></div><div class="col-md-4"></div>
+</div>
+@include('layouts._form_footer')
 
+
+    
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-dark">
                                     {{ __('Entrar') }}
                                 </button>
 

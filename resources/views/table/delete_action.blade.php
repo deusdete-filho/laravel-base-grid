@@ -1,4 +1,4 @@
-<a href="{{route($action['route'],[$row->getKey()])}}" class="btn btn-primary btn-danger btn-sm"
+<a href="{{route($action['route'],[$row->getKey()])}}" class="btn btn-light btn-sm"
     onclick="event.preventDefault();if(confirm('Deseja excluir este item?')){document.getElementById('form-delete-{{$row->getKey()}}').submit();}">
     <span class="glyphicon glyphicon-trash"></span> {{$action['label']}}
 </a>

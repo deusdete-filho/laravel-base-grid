@@ -1,18 +1,66 @@
 body {
-background: #eff1f4ff;
+    color: #262d37ff;
+    background: #eff1f4ff;
+    flex: 1 0 auto;
+
+
 }
 #style-navbar{
     padding: 13px;
-    background-color: #fff;
-    box-shadow: 5px 2px 6px rgba(164, 164, 164, 0.2)
+    background-color: #262d37ff;
+    box-shadow: 5px 2px 6px rgba(164, 164, 164, 0.4)
 
 }
+.titulomenu{
+    font-size: 16px;
+    color: #262d37ff;
+}
+.titulopagina{
+    font-size: 22px;
+    padding-bottom: 12px;
+    color: #262d37ff;
+}
+#style-paginacao{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #262d37ff;
+    
+}
+#style-footer{
+    box-shadow: 1px 2px 6px rgba(164, 164, 164, 0.2);
+    background: #fff;
+    padding: 12px;
+    flex-shrink: 0;
+    height: 50px;
+
+
+ 
+    width: 100%;
+
+}
+
 #style-card{
     box-shadow: 1px 2px 6px rgba(164, 164, 164, 0.2);
-    border-color: #fff;
+}
+#style-card-footer{
+    background-color: #f5f7faff;
+   
 }
 #navbar-site-title{
     font-size: 19px;
     padding-left: 1.2%;
     padding-right: 1.5%;
+}
+
+.alinhadoEsquerda {
+    text-align:left;
+    width: 10px;
+}
+.alinhadoCentro {text-align:center;}
+.alinhadoDireita {text-align:right;}
+
+td {padding-top: 1px;}
+
+.confirm-btn button{
+    background-color: #262d37ff;
 }

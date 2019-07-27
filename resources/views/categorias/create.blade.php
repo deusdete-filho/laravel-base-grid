@@ -9,6 +9,8 @@
       <form method="POST" action="{{route('categorias.store')}}">
       @include('categorias._form')              
       </form>
+
+
     @endsection
 
 @endsection
