@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@include('layouts._card')              
 
 @section('content')
 <div class="container">

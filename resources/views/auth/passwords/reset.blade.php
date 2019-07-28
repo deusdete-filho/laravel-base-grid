@@ -5,6 +5,7 @@
     @endsection
 
     @section('conteudopagina')
+    @include('layouts._card')              
 
                     <form method="POST" action="{{ route('password.update') }}">
                         @csrf

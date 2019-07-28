@@ -3,6 +3,7 @@
    @section('titulopagina')
     Cadastrar
     @endsection
+    @include('layouts._card')              
 
     @section('conteudopagina')
     <form method="POST" action="{{ route('register') }}">
