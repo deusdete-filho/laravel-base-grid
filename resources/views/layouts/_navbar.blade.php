@@ -25,8 +25,9 @@
                     <!-- links Navbar -->
                         <li class="nav-item dropdown ">
                             <a id="dropdown01" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-sm-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/categorias">Lista</a>
+                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/categorias/create">Adicionar</a>
                                 </div>
                         </li>

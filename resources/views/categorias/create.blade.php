@@ -6,7 +6,7 @@
 
     @section('conteudopagina')
     @include('layouts._card')              
-      <form method="POST" action="{{route('categorias.store')}}">
+      <form method="POST" action="{{route('categorias.store')}}" enctype="multipart/form-data">
       @include('categorias._form')              
       </form>
 

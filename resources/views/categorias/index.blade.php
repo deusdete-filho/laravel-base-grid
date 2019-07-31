@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
    @section('titulopagina')
       Categorias
@@ -13,3 +14,6 @@
 
 @endsection
 
+@section('scripts')
+      <script src="{{ asset('js/alert.js') }}"></script>
+@endsection

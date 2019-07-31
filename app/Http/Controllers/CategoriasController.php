@@ -33,11 +33,11 @@ class CategoriasController extends Controller
                     'order' => true //true, asc ou desc
                 ],
                 [
-    'label' => 'Data criação',
-    'name' => 'created_at',
-    'order' => true //true, asc ou desc
-]
-            ])
+                    'label' => 'Data criação',
+                    'name' => 'created_at',
+                    'order' => true //true, asc ou desc
+                ]
+              ])
             ->filters([
                 [
                     'name' => 'id',
@@ -52,24 +52,32 @@ class CategoriasController extends Controller
             ->addDeleteAction('categorias.destroy')            
             // ->addShowAction('categorias.show')
 
-            ->paginate(20)
+            ->paginate(15)
             ->search();
         return view('categorias.index',[
             'table' => $this->table
         ]);
     }
-
     public function create()
     {
         return view('categorias/create',['categoria' => new Categorias()]);
     }
-
     public function store(Request $request)
     {
         $data = $this->_validate($request);
         $data = $request->all();
-        Categorias::create($data);
-        return redirect()->route('categorias.index');
+            $nameFile = null;
+            if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
+                $name = uniqid(date('HisYmd'));
+                $extension = $request->foto->extension();
+                $nameFile = "{$name}.{$extension}";
+                $request->foto->storeAs('img', $nameFile);
+                $data['foto'] = $nameFile;
+
+                Categorias::create($data);
+                session()->flash('message', 'Cadastrado com sucesso!');
+                return redirect()->route('categorias.index');
+            }
     }
 
     public function edit(Categorias $categoria)
@@ -83,24 +91,35 @@ class CategoriasController extends Controller
     }
     public function update(Request $request, Categorias $categoria)
     {   
-        $this->_validate($request);
+        $data = $this->_validate($request);
         $data = $request->all();
-        $categoria -> fill($data);
-        $categoria ->save();
-        return redirect()->route('categorias.index');
 
+        $nameFile = null;
+        if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
+            $name = uniqid(date('HisYmd'));
+            $extension = $request->foto->extension();
+            $nameFile = "{$name}.{$extension}";        
+            $request->foto->storeAs('img', $nameFile);
+            $data['foto'] = $nameFile;
+
+            $categoria -> fill($data);
+            $categoria ->save();
+            session()->flash('message', 'Alterado com sucesso!');
+            return redirect()->route('categorias.index');
+        }
     }
-
     public function destroy($id)
     {
         $destroy = Categorias::findOrFail($id);
         $destroy->delete();
+        session()->flash('message', 'Deletado com sucesso!');
         return redirect()->route('categorias.index');
     }
     protected function _validate(Request $request)
     {
         $this->validate($request, [
-            'name'=> 'required|max:255'
+            'name'=> 'required|max:255',
+            'foto'=>'required|mimes:jpeg,bmp,png'
 
         ]);
 
